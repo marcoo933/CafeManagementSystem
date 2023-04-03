@@ -23,7 +23,7 @@ export class ProductService {
   }
 
   getProducts() {
-    this.httpClient.get(this.url + '/product/get/');
+    return this.httpClient.get(this.url + '/product/get/');
   }
 
   updateStatus(data: any) {
