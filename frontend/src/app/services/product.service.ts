@@ -43,6 +43,6 @@ export class ProductService {
   }
 
   getById(id: any) {
-    return this.httpClient.get(this.url + '/product/getById'+id);
+    return this.httpClient.get(this.url + '/product/getById/'+id);
   }
 }

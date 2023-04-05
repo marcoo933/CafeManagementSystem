@@ -37,7 +37,7 @@ export class ManageOrderComponent implements OnInit {
     this.manageOrderForm = this.formBuilder.group({
       name: [null, [Validators.required, Validators.pattern(GlobalConstants.nameRegex)]],
       email: [null, [Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
-      constactNumber: [null, [Validators.required, Validators.pattern(GlobalConstants.contactNumberRegex)]],
+      contactNumber: [null, [Validators.required, Validators.pattern(GlobalConstants.contactNumberRegex)]],
       paymentMethod: [null, [Validators.required]],
       product: [null, [Validators.required]],
       category: [null, [Validators.required]],
@@ -85,8 +85,8 @@ export class ManageOrderComponent implements OnInit {
 
   getProductDetails(value: any) {
     this.productService.getById(value.id).subscribe((response: any) => {
-      this.price = response.price;
-      this.manageOrderForm.controls['price'].setValue(response.price);
+      this.price = response[0].price;
+      this.manageOrderForm.controls['price'].setValue(response[0].price);
       this.manageOrderForm.controls['quantity'].setValue('1');
       this.manageOrderForm.controls['total'].setValue(this.price * 1);
 
