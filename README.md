@@ -21,7 +21,26 @@ cd ./Backend-Cafe-Nodejs
 npm install
 ```
 3. create your own mysql DB with the commands in the table.sql file under Backend-Cafe-Nodejs folder
-4. start the BE server
+4. under the folder Backend-Cafe-Nodejs create a file named '.env' the structure will be like this:
+```
+//Server
+PORT= 8080
+
+//Connection
+DB_PORT = "your DB PORT"
+DB_HOST= localhost
+DB_USERNAME = "your DB USERNAME"
+DB_PASSWORD = "your DB PASSWORD"
+DB_NAME = "your DB NAME"
+
+ACCESS_TOKEN = d1253bf6a0b1fc277b4ebc05720ede2f79a4657536f5c5063b5a681024b37a080d07c680181392f0ccd47811172a77d4a3e5ff03dd742d89c908b42713dfc1ed
+
+EMAIL = "An email used for the password reset"
+PASSWORD = "A genereted App Password, gmail guide: https://www.youtube.com/watch?v=lSURGX0JHbA"
+
+USER = user
+```
+5. start the BE server
 ```
 npm start
 ```
